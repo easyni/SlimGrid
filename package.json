@@ -1,0 +1,25 @@
+{
+  "name": "slimgrid",
+  "version": "1.0.0",
+  "description": "Slimgrid",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.5"
+  },
+  "devDependencies": {
+    "bower": "^1.5.3",
+    "gulp": "^3.9.1"
+  }
+}

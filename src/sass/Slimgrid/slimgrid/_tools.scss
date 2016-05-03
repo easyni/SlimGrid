@@ -1,0 +1,38 @@
+@mixin row() {
+  &:before, &:after {
+      content: " ";
+      display: table;
+  }
+  &:after {
+      clear: both;
+  }
+}
+
+@mixin row-guttered($size) {
+  @include row();
+  margin-left:-$size;
+  margin-right:-$size;
+  .#{$columnName}s {
+    padding:0 $size;
+  }
+}
+
+@mixin images-responsive() {
+  display: block;
+  max-width: 100%;
+}
+
+@mixin generate-column-exeption( $result, $name, $sufix:"") {
+  .#{$columnName}-#{$name}#{$sufix} {
+    width:#{$result}#{%}!important;
+  }
+  .#{$columnName}-#{$name}#{$sufix}-no_important {
+    width:#{$result}#{%};
+  }
+}
+
+@mixin break($breakName) {
+  @media screen and (max-width:#{$breakName}px){
+    @content;
+  }
+}

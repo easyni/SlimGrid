@@ -1,0 +1,27 @@
+// global wrapper name
+$globalWrapperName:"global-wrapper";
+// global wrapper width
+$globalWrapperWidth:1220px;
+
+// column name
+$columnName:"column";
+
+// gutter
+$gutterSize:10px;
+
+//all my break
+$xl:1280;
+$l:1023;
+$m:768;
+$s:540;
+$xs:480;
+
+//all my break name
+$all-break:
+($xl 'xl'),
+($l 'l'),
+($m 'm'),
+($s 's'),
+($xs 'xs');
+
+

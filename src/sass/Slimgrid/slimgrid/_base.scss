@@ -1,0 +1,35 @@
+
+.ie-old body{
+  min-width:958px;
+}
+body {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+.row{
+  @include row();
+}
+.row-gutterd{
+  @include row-guttered($gutterSize);
+}
+
+.#{$columnName}s {
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  &.right {
+    float: right;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.images-responsive {
+  @include images-responsive();
+}

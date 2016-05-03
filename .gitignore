@@ -1,0 +1,14 @@
+.idea
+.DS_Store
+web/integration/files/zip/*
+log/*
+/vendor/
+web/integration/assets/.sass-cache/*
+node_modules/
+web/includes/*
+web/index.php
+web/views/*
+web/assets/js/vendor/
+src/bootstrap
+
+
