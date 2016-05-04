@@ -1,0 +1,54 @@
+
+@mixin generate-column($i,$sufix:"") {
+  .#{$columnName}-#{$i}#{$sufix} {
+    width:#{$i}#{%}!important;
+  }
+  .#{$columnName}-#{$i}#{$sufix}-no_important {
+    width:#{$i}#{%};
+  }
+}
+
+@mixin generate-hide($sufix:"") {
+  .hide#{$sufix} {
+     display: none !important;
+  }
+}
+
+@mixin generate-show($sufix:"") {
+  .show#{$sufix} {
+     display: block !important;
+  }
+  .show#{$sufix}-inline_block {
+     display: inline-block !important;
+  }
+}
+
+
+@mixin generate-all-colmumn($sufix:"") {
+  @include generate-column-exeption(100/6,"16_66",$sufix);
+  @include generate-column-exeption(100/3,"33_33",$sufix);
+  @include generate-column-exeption(100*2/3,"66_66",$sufix);
+  @include generate-hide($sufix);
+  @include generate-show($sufix);
+  @for $i from 1 through 100 {
+    @include generate-column($i,$sufix);
+  }
+}
+
+@mixin generate-break($break, $breakName) {
+  @media screen and (max-width:#{$break}px){
+    @include generate-all-colmumn("-#{$breakName}");
+  }
+}
+
+.#{$globalWrapperName} {
+  max-width: #{$globalWrapperWidth};
+  margin: 0 auto;
+}
+
+@include generate-all-colmumn();
+
+@each $current-break, $breakname in $all-break {
+  @include generate-break($current-break,$breakname);
+}
+
