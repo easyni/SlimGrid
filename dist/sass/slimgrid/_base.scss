@@ -11,7 +11,7 @@ body {
 .row{
   @include row();
 }
-.row-gutterd{
+.row-guttered{
   @include row-guttered($gutterSize);
 }
 

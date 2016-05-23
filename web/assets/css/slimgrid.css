@@ -13,15 +13,15 @@ body {
 .row:after {
   clear: both; }
 
-.row-gutterd {
+.row-guttered {
   margin-left: -10px;
   margin-right: -10px; }
-  .row-gutterd:before, .row-gutterd:after {
+  .row-guttered:before, .row-guttered:after {
     content: " ";
     display: table; }
-  .row-gutterd:after {
+  .row-guttered:after {
     clear: both; }
-  .row-gutterd .columns {
+  .row-guttered .columns {
     padding: 0 10px; }
 
 .columns {
