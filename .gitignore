@@ -10,5 +10,6 @@ web/index.php
 web/views/*
 web/assets/js/vendor/
 src/bootstrap
+.gitignore
 
 
