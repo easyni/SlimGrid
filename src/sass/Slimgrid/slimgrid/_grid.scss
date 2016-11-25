@@ -1,43 +1,43 @@
 
-@mixin generate-column($i,$sufix:"") {
-  .#{$columnName}-#{$i}#{$sufix} {
+@mixin generate-column($i,$suffix:"") {
+  .#{$columnName}-#{$i}#{$suffix} {
     width:#{$i}#{%}!important;
   }
-  .#{$columnName}-#{$i}#{$sufix}-no_important {
+  .#{$columnName}-#{$i}#{$suffix}-no_important {
     width:#{$i}#{%};
   }
 }
 
-@mixin generate-hide($sufix:"") {
-  .hide#{$sufix} {
+@mixin generate-hide($suffix:"") {
+  .hide#{$suffix} {
      display: none !important;
   }
 }
 
-@mixin generate-show($sufix:"") {
-  .show#{$sufix} {
+@mixin generate-show($suffix:"") {
+  .show#{$suffix} {
      display: block !important;
   }
-  .show#{$sufix}-inline_block {
+  .show#{$suffix}-inline_block {
      display: inline-block !important;
   }
 }
 
 
-@mixin generate-all-colmumn($sufix:"") {
-  @include generate-column-exeption(100/6,"16_66",$sufix);
-  @include generate-column-exeption(100/3,"33_33",$sufix);
-  @include generate-column-exeption(100*2/3,"66_66",$sufix);
-  @include generate-hide($sufix);
-  @include generate-show($sufix);
+@mixin generate-all-column($suffix:"") {
+  @include generate-column-exception(100/6,"16_66",$suffix);
+  @include generate-column-exception(100/3,"33_33",$suffix);
+  @include generate-column-exception(100*2/3,"66_66",$suffix);
+  @include generate-hide($suffix);
+  @include generate-show($suffix);
   @for $i from 1 through 100 {
-    @include generate-column($i,$sufix);
+    @include generate-column($i,$suffix);
   }
 }
 
 @mixin generate-break($break, $breakName) {
   @media screen and (max-width:#{$break}px){
-    @include generate-all-colmumn("-#{$breakName}");
+    @include generate-all-column("-#{$breakName}");
   }
 }
 
@@ -46,9 +46,9 @@
   margin: 0 auto;
 }
 
-@include generate-all-colmumn();
+@include generate-all-column();
 
-@each $current-break, $breakname in $all-break {
-  @include generate-break($current-break,$breakname);
+@each $current-break, $breakName in $all-break {
+  @include generate-break($current-break,$breakName);
 }
 

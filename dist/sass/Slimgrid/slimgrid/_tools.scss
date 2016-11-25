@@ -22,12 +22,12 @@
   max-width: 100%;
 }
 
-@mixin generate-column-exeption( $result, $name, $sufix:"") {
-  .#{$columnName}-#{$name}#{$sufix} {
-    width:#{$result}#{%}!important;
+@mixin generate-column-exception( $value, $name, $breakSuffix:"") {
+  .#{$columnName}-#{$name}#{$breakSuffix} {
+    width:#{$value}#{%}!important;
   }
-  .#{$columnName}-#{$name}#{$sufix}-no_important {
-    width:#{$result}#{%};
+  .#{$columnName}-#{$name}#{$breakSuffix}-no_important {
+    width:#{$value}#{%};
   }
 }
 
